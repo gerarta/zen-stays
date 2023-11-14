@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->integer('boarding_house_id');
             $table->string('name');
+            $table->string('link');
             $table->string('type');
         });
     }
