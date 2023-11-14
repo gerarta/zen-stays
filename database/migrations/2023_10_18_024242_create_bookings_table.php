@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('customer_id');
-            $table->integer('boarding_house_id');
+            $table->unsignedBigInteger('customer_id');
+            $table->unsignedBigInteger('boarding_house_id');
             $table->string('start_time');
             $table->string('end_time')->nullable();
             $table->boolean('is_confirmed');
@@ -25,6 +25,8 @@ return new class extends Migration
             $table->integer('total_amount');
             $table->integer('temp_amount');
             
+            $table->foreign('customer_id')->references('id')->on('users');
+            $table->foreign('boarding_house_id')->references('id')->on('boarding_houses');
         });
     }
 

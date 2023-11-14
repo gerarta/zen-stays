@@ -11,6 +11,15 @@ class Picture extends Model
     protected $table = "pictures";
     protected $timestamp= true;
     protected $primaryKey = 'id';
+    protected $fillable = [
+        'boarding_house_id',
+        'name',
+        'type',
+        'link'
+    ];
     protected $guarded = [];
 
+    public function boarding_house(){
+        return $this->belongsTo(BoardingHouse::class, 'boarding_house_id');
+    }
 }

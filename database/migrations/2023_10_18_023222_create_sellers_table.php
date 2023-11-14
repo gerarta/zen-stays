@@ -13,19 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('boarding_houses', function (Blueprint $table) {
+        Schema::create('sellers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('seller_id');
+            $table->string('email');
             $table->string('name');
-            $table->integer('address');
-            $table->integer('fixed_quota');
-            $table->integer('temp_quota');
-            $table->longText('rules');
-            $table->integer('price');
+            $table->string('password');
+            $table->string('phone_number');
+            $table->date('dob');
             $table->string('gender');
-            $table->double('rating');
-
+            $table->rememberToken();
         });
     }
 
@@ -36,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boarding_houses');
+        Schema::dropIfExists('sellers');
     }
 };

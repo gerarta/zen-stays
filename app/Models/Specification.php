@@ -11,6 +11,17 @@ class Specification extends Model
     protected $table = "specifications";
     protected $timestamp= true;
     protected $primaryKey = 'id';
+    protected $fillable = [
+        'boarding_house_id',
+        'specification_type_id',
+        'description'
+    ];
     protected $guarded = [];
 
+    public function specification_type(){
+        return $this->belongsTo(SpecificationType::class, 'specification_type_id');
+    }
+    public function boarding_house(){
+        return $this->belongsTo(BoardingHouse::class, 'boarding_house_id');
+    }
 }
