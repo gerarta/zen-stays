@@ -15,13 +15,17 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->timestamps("created_at");
-            $table->integer('booking_id');
+            $table->timestamps();
+            $table->unsignedBigInteger('payment_provider_id');
+            $table->unsignedBigInteger('booking_id');
             $table->string('account_name');
             $table->string('account_number');
             $table->boolean('is_confirmed');
             $table->string('payment_proof');
             $table->integer('amount');
+
+            $table->foreign('payment_provider_id')->references('id')->on('payment_providers');
+            $table->foreign('booking_id')->references('id')->on('bookings');
         });
     }
 

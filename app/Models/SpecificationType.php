@@ -13,4 +13,7 @@ class SpecificationType extends Model
     protected $primaryKey = 'id';
     protected $guarded = [];
 
+    public function specification(){
+        return $this->hasMany(Specification::class);
+    }
 }

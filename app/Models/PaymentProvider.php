@@ -11,6 +11,13 @@ class PaymentProvider extends Model
     protected $table = "payment_providers";
     protected $timestamp= true;
     protected $primaryKey = 'id';
+    protected $fillable = [
+        'payment_type',
+        'name',
+    ];
     protected $guarded = [];
 
+    public function payment(){
+        return $this->hasMany(Payment::class);
+    }
 }
