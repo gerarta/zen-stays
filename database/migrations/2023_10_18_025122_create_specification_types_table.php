@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('spesification_types', function (Blueprint $table) {
+        Schema::create('specification_types', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('type');
