@@ -3,6 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\BoardingHouse;
+use App\Models\Specification;
+use App\Models\SpecificationType;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,5 +24,10 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $this->call(SellerSeeder::class);
+        $this->call(SpecificationTypeSeeder::class);
+        $this->call(BoardingHouseSeeder::class);
+        $this->call(SpecificationSeeder::class);
     }
 }

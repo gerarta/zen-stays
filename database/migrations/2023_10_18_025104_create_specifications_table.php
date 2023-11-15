@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('boarding_house_id');
             $table->unsignedBigInteger('specification_type_id');
-            $table->longText('description');
+            $table->longText('description')->nullable();
 
             $table->foreign('specification_type_id')->references('id')->on('specification_types');
             $table->foreign('boarding_house_id')->references('id')->on('boarding_houses');
