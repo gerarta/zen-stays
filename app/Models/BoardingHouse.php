@@ -18,7 +18,7 @@ class BoardingHouse extends Model
         'fixed_quota',
         'temp_quota',
         'rules',
-        'price_per_month',
+        'price',
         'gender',
         'rating',
     ];

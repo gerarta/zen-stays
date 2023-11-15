@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class SellerSeeder extends Seeder
 {
@@ -15,5 +18,14 @@ class SellerSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('sellers')->insert([
+            'name' => 'Mamat Hussein',
+            'email' => 'mhuessein123@gmail.com',
+            'password' => Hash::make('mamathussein'),
+            'phone_number' => '0899859825',
+            'dob' => Carbon::createFromDate(1995, 10, 25),
+            'gender' => 'Male',
+            'password_resets' => 0,
+        ]);
     }
 }

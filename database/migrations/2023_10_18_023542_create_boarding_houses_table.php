@@ -18,7 +18,9 @@ return new class extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('seller_id');
             $table->string('name');
-            $table->integer('address');
+            $table->text('address');
+            $table->text('city');
+            $table->text('province');
             $table->integer('fixed_quota');
             $table->integer('temp_quota');
             $table->longText('rules');
