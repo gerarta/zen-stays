@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class BoardingHouseSeeder extends Seeder
+class KostSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class BoardingHouseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('boarding_houses')->insert([
+        DB::table('kosts')->insert([
             'seller_id' => 1,
             'name' => 'Kost U18A - Room Tipe B',
             'address' => 'Jl. U No. 18A, Kemanggisan',

@@ -13,7 +13,7 @@ class Booking extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
         'customer_id',
-        'boarding_house_id',
+        'kost_id',
         'start_date',
         'end_date',
         'is_confirmed',
@@ -26,8 +26,8 @@ class Booking extends Model
     public function customer(){
         return $this->belongsTo(User::class, 'customer_id');
     }
-    public function boarding_house(){
-        return $this->belongsTo(BoardingHouse::class, 'boarding_house_id');
+    public function kost(){
+        return $this->belongsTo(Kost::class, 'kost_id');
     }
     public function payment(){
         return $this->hasMany(Payment::class);

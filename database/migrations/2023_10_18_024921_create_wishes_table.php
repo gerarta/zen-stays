@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->unsignedBigInteger('customer_id');
-            $table->unsignedBigInteger('boarding_house_id');
+            $table->unsignedBigInteger('kost_id');
 
             $table->foreign('customer_id')->references('id')->on('users');
-            $table->foreign('boarding_house_id')->references('id')->on('boarding_houses');
+            $table->foreign('kost_id')->references('id')->on('kosts');
         });
     }
 
