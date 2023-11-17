@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->unsignedBigInteger('customer_id');
-            $table->unsignedBigInteger('boarding_house_id');
+            $table->unsignedBigInteger('kost_id');
             $table->string('start_time');
             $table->string('end_time')->nullable();
             $table->boolean('is_confirmed');
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->integer('temp_amount');
             
             $table->foreign('customer_id')->references('id')->on('users');
-            $table->foreign('boarding_house_id')->references('id')->on('boarding_houses');
+            $table->foreign('kost_id')->references('id')->on('kosts');
         });
     }
 

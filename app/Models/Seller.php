@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\BoardingHouse;
+use App\Models\Kost;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -25,7 +25,7 @@ class Seller extends Authenticatable
     ];
     protected $guarded = [];
 
-    public function boarding_house(){
-        return $this->hasMany(BoardingHouse::class);
+    public function kost(){
+        return $this->hasMany(Kost::class);
     }
 }
