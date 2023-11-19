@@ -12,14 +12,14 @@ class Picture extends Model
     protected $timestamp= true;
     protected $primaryKey = 'id';
     protected $fillable = [
-        'boarding_house_id',
+        'kost_id',
         'name',
         'type',
         'link'
     ];
     protected $guarded = [];
 
-    public function boarding_house(){
-        return $this->belongsTo(BoardingHouse::class, 'boarding_house_id');
+    public function kost(){
+        return $this->belongsTo(Kost::class, 'kost_id');
     }
 }

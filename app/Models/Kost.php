@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BoardingHouse extends Model
+class Kost extends Model
 {
     use HasFactory;
-    protected $table = "boarding_houses";
+    protected $table = "kosts";
     protected $timestamp= true;
     protected $primaryKey = 'id';
     protected $fillable = [
@@ -18,7 +18,7 @@ class BoardingHouse extends Model
         'fixed_quota',
         'temp_quota',
         'rules',
-        'price_per_month',
+        'price',
         'gender',
         'rating',
     ];

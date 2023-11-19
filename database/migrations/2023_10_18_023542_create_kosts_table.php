@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('boarding_houses', function (Blueprint $table) {
+        Schema::create('kosts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->unsignedBigInteger('seller_id');
             $table->string('name');
-            $table->integer('address');
+            $table->text('address');
+            $table->text('city');
+            $table->text('province');
             $table->integer('fixed_quota');
             $table->integer('temp_quota');
             $table->longText('rules');
@@ -37,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boarding_houses');
+        Schema::dropIfExists('kosts');
     }
 };

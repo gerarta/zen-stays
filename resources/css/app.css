@@ -1,2 +1,10 @@
-@import './style.css'
+@import './styles.css';
 
+.splash-login{
+    background-image: url('/assets/images/login-splash.png');
+    background-size: cover;
+}
+.splash-register{
+    background-image: url('/assets/images/register-splash.png');
+    background-size: cover;
+}
