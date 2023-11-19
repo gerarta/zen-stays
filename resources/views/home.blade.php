@@ -39,7 +39,7 @@
     </section>
 
     <section id="about-zen-stay">
-        <div class="md:-mt-40 max-w-[95%] mx-auto p-4">
+        <div class=" container md:-mt-40  mx-auto p-4">
             <div class="grid md:grid-cols-2">
                 <div>
                     <h1 class="text-5xl font-bold mb-4">

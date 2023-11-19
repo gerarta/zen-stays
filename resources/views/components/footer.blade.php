@@ -1,4 +1,5 @@
-<footer class="mt-8 bg-[#7EAA92] top-0 left-0 right-0 p-4" >
+<footer class="mt-8 bg-[#7EAA92] top-0 left-0 right-0 p-4 relative" >
+    <img src="/images/Vector-2.png" alt="" class="object-center object-cover absolute -top-40 right-40 w-1/4 -z-10">
   <div class="grid divide-x-2 gap-4  grid-cols-3 content-center w-[85%] md:w-1/2 mx-auto">
     <div class="shrink">
         <img src="/images/logo-white.png" class="object-cover object-center w-full" alt="">
