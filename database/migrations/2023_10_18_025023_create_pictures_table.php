@@ -19,8 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('kost_id');
             $table->string('name');
             $table->string('link');
-            $table->string('type');
-
+            $table->enum('type', ['Normal', 'Panorama']);
+            
             $table->foreign('kost_id')->references('id')->on('kosts');
         });
     }

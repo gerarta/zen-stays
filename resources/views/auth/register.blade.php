@@ -5,7 +5,7 @@
 		<div class="sm:min-w-[50%] min-w-full sm:min-h-screen min-h-[64vh] sm:px-24 px-8 py-8 bg-white shadow-md flex flex-col justify-center items-center">
 			<!-- Logo ZenStays -->
 			<div class="flex justify-start mb-4">
-				<img src="/assets/images/ThemeLogo.png" alt="Logo" class="w-1/6">
+				<img src="/storage/assets/images/ThemeLogo.png" alt="Logo" class="w-1/6">
 			</div>
 
 			<div class="flex w-full font-medium text-left text-2xl">
@@ -115,7 +115,7 @@
 				</div>
 
 				<div class="flex items-start justify-center flex-col mt-4 gap-2">
-					<button type="submit" class="w-full flex justify-center text-center items-center px-4 py-2 bg-greenDark border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-greenLight focus:outline-none disabled:opacity-25 transition ease-in-out duration-150">
+					<button type="submit" class="w-full flex justify-center text-center items-center btn-green">
 						{{ __('Register') }}
 					</button>
 					<p class="text-sm text-gray-600">Already have an account? <a class="underline hover:text-greenDark" href="{{ route('login') }}">Login</a></p>

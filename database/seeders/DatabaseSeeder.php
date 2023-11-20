@@ -29,5 +29,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SpecificationTypeSeeder::class);
         $this->call(KostSeeder::class);
         $this->call(SpecificationSeeder::class);
+        $this->call(PictureSeeder::class);
     }
 }
