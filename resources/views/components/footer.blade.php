@@ -1,31 +1,25 @@
-<footer class="mt-8 bg-[#7EAA92] top-0 left-0 right-0 p-4 relative" >
-    <img src="/images/Vector-2.png" alt="" class="object-center object-cover absolute -top-40 right-40 w-1/4 -z-10">
-  <div class="grid divide-x-2 gap-4  grid-cols-3 content-center w-[85%] md:w-1/2 mx-auto">
-    <div class="shrink">
-        <img src="/images/logo-white.png" class="object-cover object-center w-full" alt="">
-    </div>
-    <div class="flex items-center justify-center flex-col">
-        <h1 class="text-2xl mb-4 text-white font-bold justify-center">Follow Us </h1>
-        <div class="grid grid-cols-4 mx-2 gap-1">
-            <a href="" class="bg-[#FFD9B7] border rounded-full p-2">
-                <img src="/images/instagram.png" alt="instagram" class=" object-center object-cover block mx-auto">
-            </a>
-            <a href="" class="bg-[#FFD9B7] border rounded-full p-2">
-                <img src="/images/whatsapp.png" alt="whatsapp" class=" object-center object-cover block mx-auto">
-            </a>
-            <a href="" class="bg-[#FFD9B7] border rounded-full p-2">
-                <img src="/images/email.png" alt="email" class=" object-center object-cover block mx-auto">
-            </a>
-            <a href="" class="bg-[#FFD9B7] border rounded-full p-2 flex items-center justify-center">
-                <img src="/images/youtube.png" alt="youtube" class="  object-center object-cover">
-            </a>
+<footer class="w-full bg-greenDark px-64 py-16 flex justify-between text-white">
+    <img src="/storage/assets/images/ThemeLogoWhite.png" class="w-[15vw]" alt="">
+    <div class="w-[2.5px] bg-orangeLight"></div>
+    <div class="flex flex-col justify-end gap-2">
+        <h2 class="text-3xl">Follow Us</h2>
+        <div class="flex flex-row gap-3 text-gray-700 text-2xl font-bold">
+            <a href="https://https//instagram.com/zenstays.official/"><button class="btn-orange rounded-full"><i class="fa-brands fa-instagram"></i></button></a>
+            <a href="https://https//www.facebook.com/profile.php?id=61552407274515"><button class="btn-orange rounded-full"><i class="fa-brands fa-facebook"></i></button></a>
+            <a href="https://https//twitter.com/ZenStaysOfc"><button class="btn-orange rounded-full"><i class="fa-brands fa-twitter"></i></button></a>
         </div>
-        <p class="text-white ms-2 text-sm md:text-xl font-bold mt-3"> © 2023. All Rights Reserved. </p>
+        <div class="text-xl">
+            © ZenStays 2023. All Rights Reserved.
+        </div>
     </div>
-    <div class="flex flex-col justify-center items-center">
-        <h1 class="text-2xl font-bold text-white">Kebijakan </h1>
-        <p class="font-bold text-[#FFD9B7]"> Kebijakan Privasi</p>
-        <p class="font-bold text-[#FFD9B7]"> Syarat & Ketentuan</p>
+    <div class="w-[2.5px] bg-orangeLight"></div>
+    <div class="flex flex-col justify-end gap-2">
+        <h3 class="text-3xl">Policy</h3>
+        <a href="">
+            <div class="text-orangeLight font-bold text-xl">Privacy Policy</div>
+        </a>
+        <a href="">
+            <div class="text-orangeLight font-bold text-xl">Terms and Conditions</div>
+        </a>
     </div>
-  </div>
 </footer>
