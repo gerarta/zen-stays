@@ -6,7 +6,7 @@
                     <div class="w-1/2">
                         <img src="/images/logo.png" class="w-full " alt="">
                     </div>
-                    <h1 class="md:text-8xl sm:text-6xl font-bold align-bottom">
+                    <h1 class="md:text-8xl text-5xl font-bold align-bottom">
                         <span class="text-[#FFD9B7]">Zen</span>
                         <span class="text-[#9ED2BE]">Stays</span>
                     </h1>
