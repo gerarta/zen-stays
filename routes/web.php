@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +20,14 @@ Route::get('/', function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::controller(KostController::class)->prefix('kost')->name('kost.')->group(function(){
+    Route::get('{id}/show', 'show')->name('show');
+    Route::get('wishlist', 'wishlist')->name('wishlist');
+    Route::get('kost-list', 'showList')->name('show-list');
+    
+});
+
+Route::controller(BookingController::class)->prefix('booking')->name('booking.')->group(function (){
+    Route::get('check-out', 'create')->name('check-out');
+});
