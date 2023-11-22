@@ -1,12 +1,12 @@
 <x-guest title="Home">
-    <section id="landing-page" class="md:container mx-auto">
-        <div class="w-full bg-[url('/images/landing-item.png')] md:h-[900px] sm:h-screen  bg-cover bg-center   ">
+    <section id="landing-page" class="mx-auto">
+        <div class="w-full m-0 bg-[url('/images/landing-item.png')] md:h-[900px] sm:h-screen  bg-cover bg-center   ">
             <div class="flex justify-end">
                 <div class=" flex items-end   ">
                     <div class="w-1/2">
                         <img src="/images/logo.png" class="w-full " alt="">
                     </div>
-                    <h1 class="md:text-8xl sm:text-6xl font-bold align-bottom">
+                    <h1 class="md:text-8xl text-5xl font-bold align-bottom">
                         <span class="text-[#FFD9B7]">Zen</span>
                         <span class="text-[#9ED2BE]">Stays</span>
                     </h1>
@@ -39,7 +39,7 @@
     </section>
 
     <section id="about-zen-stay">
-        <div class=" container md:-mt-40  mx-auto p-4">
+        <div class="  md:-mt-40  mx-auto p-4">
             <div class="grid md:grid-cols-2">
                 <div>
                     <h1 class="text-5xl font-bold mb-4">
@@ -65,7 +65,7 @@
     </section>
 
     <section id="why-zen-stay">
-        <div class="container mx-auto mt-6">
+        <div class=" mx-auto mt-6">
             <div class="grid md:grid-cols-2">
                 <div class="md:block hidden">
                     <img src="images/Vector.png" alt="">
@@ -117,7 +117,7 @@
     </section>
 
     <section id="benefit-zen-stay">
-        <div class="container mx-auto mt-6">
+        <div class=" mx-auto mt-6">
             <div class="grid md:grid-cols-2">
                 <div class="ms-4  tracking-wider">
                     <h1 class="text-5xl font-bold mb-4">
@@ -171,7 +171,7 @@
     </section>
 
     <section id="send-us-message">
-        <div class="container mt-5 w-[90%] mx-auto ">
+        <div class=" mt-5 w-[90%] mx-auto ">
             <div class="grid grid-cols-2 gap-4">
                 <form action="" class="">
                     <div class="grid grid-cols-2 gap-4">

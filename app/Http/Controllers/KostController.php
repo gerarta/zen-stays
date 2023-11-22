@@ -28,4 +28,17 @@ class KostController extends Controller
             'kosts' => $kosts
         ]);
     }
+
+    public function showList(){
+        $kosts = Kost::all();
+        if(request("price_range")){
+            $priceRange = explode(",", request('price_range'));
+            $kosts = $kosts->where('price', '>=', $priceRange[0])
+                -> where('price', "<=" , $priceRange[1]);
+
+        }
+        return view('kost.list',[ 
+            'kosts' => $kosts
+        ]);
+    }
 }

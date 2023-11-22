@@ -1,4 +1,4 @@
-<x-guest title="{{ $kost->name }}">
+<x-user title="{{ $kost->name }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <section class="flex flex-row justify-center gap-16">
@@ -196,7 +196,7 @@
         });
         viewer.add( panorama );
     </script>
-</x-guest>
+</x-user>
 <style>
 .virtual-tour-entry{
     /* background-image: url({{ $kost->picture[0]->link }}); */

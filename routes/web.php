@@ -24,6 +24,8 @@ require __DIR__.'/auth.php';
 Route::controller(KostController::class)->prefix('kost')->name('kost.')->group(function(){
     Route::get('{id}/show', 'show')->name('show');
     Route::get('wishlist', 'wishlist')->name('wishlist');
+    Route::get('kost-list', 'showList')->name('show-list');
+    
 });
 
 Route::controller(BookingController::class)->prefix('booking')->name('booking.')->group(function (){
