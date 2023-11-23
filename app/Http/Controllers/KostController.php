@@ -31,11 +31,15 @@ class KostController extends Controller
 
     public function showList(){
         $kosts = Kost::all();
+        if(request("name")){
+            $name = request("name");
+            $kosts = Kost::where('name', 'like', '%'.$name.'%' )->get();
+        }
+
         if(request("price_range")){
             $priceRange = explode(",", request('price_range'));
             $kosts = $kosts->where('price', '>=', $priceRange[0])
                 -> where('price', "<=" , $priceRange[1]);
-
         }
         return view('kost.list',[ 
             'kosts' => $kosts
