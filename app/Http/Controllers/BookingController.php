@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\Kost;
 use DateTime;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
-    public function create(Request $request){
+    public function confirmation(Request $request){
         $request->validate([
             'start_date' => ['required', 'date'],
             'end_date' => ['required', 'date']
@@ -28,11 +29,36 @@ class BookingController extends Controller
         $months = $diff->format('%r%m');
         $total_months = $yearsInMonths + $months;
             
-        return view('booking.check-out', [
+        return view('booking.confirmation', [
             'kost' => $kost,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
             'total_months' => $total_months
         ]);
+    }
+
+    public function store(Request $request){
+        $kost = Kost::find($request->kost_id);
+
+        if(!$kost)
+            return redirect('/')->with('error', 'Kost not found');
+
+        $kost->update([
+            'temp_quota' => $kost->temp_quota + 1,
+        ]);
+        
+
+        Booking::create([
+            'customer_id' => auth()->user()->id,
+            'kost_id' => $kost->id,
+            'start_date' => $request->start_date,
+            'end_date'=> $request->end_date,
+            'is_confirmed' => 0,
+            'is_ongoing' => 1,
+            'total_amount' => $request->total_amount,
+            'temp_amount' => 0
+        ]);
+
+        return redirect(route('user.index'))->with('success', 'Booking has been successfuly made');
     }
 }

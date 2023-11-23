@@ -1,5 +1,5 @@
 <x-guest title="Home">
-    <section id="landing-page" class="mx-auto">
+    <section id="landing-page" class="mx-auto mt-[5.2rem]">
         <div class="w-full m-0 bg-[url('/images/landing-item.png')] md:h-[900px] sm:h-screen  bg-cover bg-center   ">
             <div class="flex justify-end">
                 <div class=" flex items-end   ">
@@ -18,27 +18,26 @@
                     "Where Every <span class="font-bold text-[#9ED2BE]">Stays</span> Fells like a Homecoming"
                 </blockquote>
             </div>
-            <div class="flex justify-end w-auto me-2 mt-4">
-                <form action="{{route('kost.show-list')}}">
-                    <div class="flex rounded-full shadow-sm border  p-0.5">
-                        <input type="text"
-                            class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-s-full text-sm focus:z-10 focus:outline-none focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600
-                            tracking-wider"
-                            name="name"
-                            placeholder="looking for a kost ? ">
-                        <span
-                            class="px-4 inline-flex items-center min-w-fit rounded-e-full border border-e-0 border-gray-200 bg-green-200 text-sm text-gray-500 dark:bg-gray-700 dark:border-gray-700 dark:text-gray-400 tracking-widest"> <button type="submit">
-                                SEARCH
-                            </button>
-                        </span>
-                    </div>
-                </form>
-            </div>
+            <form class="flex justify-end w-auto me-2 mt-4" action="{{ route('kost.show-list') }}" method="POST">
+                @csrf
+                @method('GET')
+                <div class="flex rounded-full shadow-sm border  p-0.5">
+                    <input type="text"
+                        class="py-2 px-3 pe-11 block w-[300px] border-gray-200 shadow-sm rounded-s-full text-sm focus:z-10 focus:outline-none focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none 
+                        tracking-wider"
+                        placeholder="Enter Kost Name/Location"
+                        name="name"
+                        >
+                    <button type="submit"
+                        class="px-4 inline-flex items-center min-w-fit rounded-e-full border border-e-0 border-gray-200 bg-green-200 text-sm text-gray-500  tracking-widest">SEARCH
+                    </button>
+                </div>
+            </form>
             <div class="text-end me-2 mt-4 p-1">
                 {{-- <h3 class="text-white text-5xl mb-4 font-bold"> Or </h3> --}}
-                <button class="bg-[#7EAA92] text-white rounded-full tracking-widest uppercase p-3 hover:bg-green-800">
+                {{-- <button class="bg-[#7EAA92] text-white rounded-full tracking-widest uppercase p-3 hover:bg-green-800">
                     Register as a tenant
-                </button>
+                </button> --}}
             </div>
         </div>
     </section>
@@ -122,7 +121,7 @@
     </section>
 
     <section id="benefit-zen-stay">
-        <div class=" mx-auto mt-6">
+        <div class=" mt-6">
             <div class="grid md:grid-cols-2">
                 <div class="ms-4  tracking-wider">
                     <h1 class="text-5xl font-bold mb-4">
@@ -176,9 +175,9 @@
     </section>
 
     <section id="send-us-message">
-        <div class=" mt-5 w-[90%] mx-auto ">
+        <div class="mt-5 mx-auto">
             <div class="grid grid-cols-2 gap-4">
-                <form action="" class="">
+                <form action="" class="translate-x-10">
                     <div class="grid grid-cols-2 gap-4">
                         <input type="text" placeholder="First Name"
                             class=" p-1 outline outline-2 
@@ -196,7 +195,7 @@
                     outline-black placeholder:tracking-widest mt-4 w-full text-slate-500"> Message</textarea>
                 </form>
 
-                <div class="md:text-end text-start">
+                <div class="md:text-end text-start -translate-x-10">
                     <h2 class="text-4xl font-extrabold mb-4"> Send Us A Message</h2>
                     <div class=" w-full md:w-3/4 float-right">
                         <p class="font-medium text-xl mb-5">

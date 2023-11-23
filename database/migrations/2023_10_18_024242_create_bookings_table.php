@@ -18,8 +18,8 @@ return new class extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('customer_id');
             $table->unsignedBigInteger('kost_id');
-            $table->string('start_time');
-            $table->string('end_time')->nullable();
+            $table->date('start_date');
+            $table->date('end_date')->nullable();
             $table->boolean('is_confirmed');
             $table->boolean('is_ongoing');
             $table->integer('total_amount');

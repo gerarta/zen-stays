@@ -25,6 +25,8 @@ class SellerSeeder extends Seeder
             'phone_number' => '0899859825',
             'dob' => Carbon::createFromDate(1995, 10, 25),
             'gender' => 'Male',
+            'account_type' => 'BANK BCA',
+            'account_number' => '527319581',
             'password_resets' => 0,
         ]);
     }

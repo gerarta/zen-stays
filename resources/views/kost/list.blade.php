@@ -15,11 +15,11 @@
 
                         <div>
                             <label for="price"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price
+                                class="block mb-2 text-sm font-medium text-gray-900 ">Price
                                 Range
                             </label>
                             <select id="price" name="price_range"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                 <option selected disabled>Filter by Price Range</option>
                                 <option value="0,500000" {{ request('price_range') == '0,500000' ? 'selected' : '' }}>0
                                     -
@@ -51,7 +51,7 @@
             @if ($kosts->count())
                 <div class="w-full grid md:grid-cols-3 grid-cols-2 gap-4">
                     @foreach ($kosts as $kost)
-                        <div class="card  p-0 overflow-hidden rounded-xl relative">
+                        <a class="card  p-0 overflow-hidden rounded-xl relative" href="{{ route('kost.show', $kost->id) }}">
                             <div class="absolute top-3 left-3">
                                 <button class="btn-orange text-sm font-semibold">{{ $kost->rating . __('/10') }} <i
                                         class="fa-solid fa-star"></i></button>
@@ -78,7 +78,7 @@
                                     Rp {{ number_format($kost->price) }} / month
                                 </p>
                             </div>
-                        </div>
+                        </a>
                     @endforeach
                 </div>
             @else

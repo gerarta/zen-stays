@@ -23,6 +23,8 @@ return new class extends Migration
             $table->date('dob');
             $table->string('gender');
             $table->string('password_resets');
+            $table->string('account_type');
+            $table->string('account_number');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
         });
