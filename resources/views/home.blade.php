@@ -19,15 +19,20 @@
                 </blockquote>
             </div>
             <div class="flex justify-end w-auto me-2 mt-4">
-                <div class="flex rounded-full shadow-sm border  p-0.5">
-                    <input type="text"
-                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-s-full text-sm focus:z-10 focus:outline-none focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600
-                        tracking-wider"
-                        placeholder="looking for a kost ? ">
-                    <span
-                        class="px-4 inline-flex items-center min-w-fit rounded-e-full border border-e-0 border-gray-200 bg-green-200 text-sm text-gray-500 dark:bg-gray-700 dark:border-gray-700 dark:text-gray-400 tracking-widest">SEARCH
-                    </span>
-                </div>
+                <form action="{{route('kost.show-list')}}">
+                    <div class="flex rounded-full shadow-sm border  p-0.5">
+                        <input type="text"
+                            class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-s-full text-sm focus:z-10 focus:outline-none focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600
+                            tracking-wider"
+                            name="name"
+                            placeholder="looking for a kost ? ">
+                        <span
+                            class="px-4 inline-flex items-center min-w-fit rounded-e-full border border-e-0 border-gray-200 bg-green-200 text-sm text-gray-500 dark:bg-gray-700 dark:border-gray-700 dark:text-gray-400 tracking-widest"> <button type="submit">
+                                SEARCH
+                            </button>
+                        </span>
+                    </div>
+                </form>
             </div>
             <div class="text-end me-2 mt-4 p-1">
                 {{-- <h3 class="text-white text-5xl mb-4 font-bold"> Or </h3> --}}
@@ -198,11 +203,11 @@
                             We will read all emails. Send us any message you want and We'll get back to you.
                         </p>
                         <small>
-                            We need your <span class="font-bold">Name</span> and  
+                            We need your <span class="font-bold">Name</span> and
                             <span class="font-bold">
                                 Email Address
                             </span>, but you won't receive anything other than your reply.
-    
+
                         </small>
                     </div>
                 </div>
