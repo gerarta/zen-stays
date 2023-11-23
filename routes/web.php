@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KostController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\BookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +27,13 @@ Route::controller(KostController::class)->prefix('kost')->name('kost.')->group(f
     Route::get('wishlist', 'wishlist')->name('wishlist');
     Route::get('kost-list', 'showList')->name('show-list');
     
-});
+}); 
 
 Route::controller(BookingController::class)->prefix('booking')->name('booking.')->group(function (){
     Route::get('check-out', 'create')->name('check-out');
+});
+
+Route::controller(UserController::class)->prefix('user')->name('user.')->group(function (){
+    Route::get('/', 'index')->name('index');
+    Route::put('/', 'update')->name('update');
 });
