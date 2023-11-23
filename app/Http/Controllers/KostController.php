@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kost;
+use App\Models\Wish;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KostController extends Controller
 {
@@ -22,18 +24,54 @@ class KostController extends Controller
 
     public function wishlist(){
         
-        $kosts = Kost::all();
+        $wishes = Auth::guard('web')->user()?->wish;
+
+        if($wishes == null){
+            $wishes = [];
+        }
 
         return view('kost.wishlist', [
-            'kosts' => $kosts
+            'wishes' => $wishes
         ]);
+    }
+
+    public function addWishlist(Request $request){
+        
+        $kost = Kost::find($request->kost_id);
+
+        if(!$kost)
+            return redirect('/')->with('error','Error kost not found');
+        
+        
+        Wish::create([
+            'kost_id' => $request->kost_id,
+            'customer_id' => auth()->user()->id,
+        ]);
+        
+        return redirect('/kost/wishlist')->with('success','Successfuly created!');
+
+    }
+
+    public function deleteWishlist($id){
+        $wish = Wish::find($id);
+
+        if(!$wish)
+            return view('kost.wishlist')->with('error', 'Wish not found');
+        
+        $wish->delete();
+        
+        return redirect()->back()->with('success', 'Succssfully removed');
     }
 
     public function showList(){
         $kosts = Kost::all();
         if(request("name")){
             $name = request("name");
-            $kosts = Kost::where('name', 'like', '%'.$name.'%' )->get();
+            $kosts = Kost::where('name', 'like', '%'.$name.'%')
+                        ->orWhere('address', 'like', '%'.$name.'%')
+                        ->orWhere('city', 'like', '%'.$name.'%')
+                        ->orWhere('province', 'like', '%'.$name.'%')
+                        ->get();
         }
 
         if(request("price_range")){

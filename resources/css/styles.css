@@ -3,6 +3,10 @@
 @import 'tailwindcss/utilities';
 
 @layer components{
+    .text-deco{
+        font-family: 'Rowdies';
+    }
+
     .card{
         @apply rounded-lg shadow-md border-2 px-4 py-4
     }
@@ -13,6 +17,18 @@
     
     .btn-orange{
         @apply bg-gradient-to-b from-orangeLight from-20% to-orangeDark py-2 px-3 text-gray-700 rounded-lg hover:scale-105 transition duration-500
+    }
+
+    .btn-blue{
+        @apply bg-gradient-to-b from-blue-300 from-20% to-blue-400 py-2 px-3 text-gray-700 rounded-lg hover:scale-105 transition duration-500
+    }
+
+    .btn-red{
+        @apply bg-gradient-to-b from-red-300 from-20% to-red-400 py-2 px-3 text-gray-700 rounded-lg hover:scale-105 transition duration-500
+    }
+
+    .btn-gray{
+        @apply bg-gradient-to-b from-gray-300 from-20% to-gray-400 py-2 px-3 text-gray-700 rounded-lg hover:scale-105 transition duration-500
     }
 
     .btn-navbar{

@@ -18,7 +18,6 @@ class KostSeeder extends Seeder
         DB::table('kosts')->insert(
             [
                 [
-
                     'seller_id' => 1,
                     'name' => 'Kost U18A - Room Tipe B',
                     'address' => 'Jl. U No. 18A, Kemanggisan',
@@ -39,7 +38,7 @@ class KostSeeder extends Seeder
                 [
                     'seller_id' => 1,
                     'name' => 'Kost Mandala 4',
-                    'address' => 'Palmerah Barat',
+                    'address' => 'Jl. Mandala No. 3, Kemanggisan',
                     'price' => 2399999,
                     'city' => 'Jakarta Barat',
                     'province' => 'DKI Jakarta',
@@ -75,7 +74,7 @@ class KostSeeder extends Seeder
                 [
                     'seller_id' => 1,
                     'name' => 'Kost Perdamaian',
-                    'address' => 'Palmerah Barat',
+                    'address' => 'Jl. Perdamaian No. 1, Kemanggisan',
                     'price' => 1500000,
                     'city' => 'Jakarta Barat',
                     'province' => 'DKI Jakarta',

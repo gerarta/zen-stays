@@ -2,7 +2,7 @@
 @section('title', 'Register')
 @section('content')
 	<section class="min-h-screen min-w-full flex sm:flex-row flex-col-reverse bg-gray-100">
-		<div class="sm:min-w-[50%] min-w-full sm:min-h-screen min-h-[64vh] sm:px-24 px-8 py-8 bg-white shadow-md flex flex-col justify-center items-center">
+		<div class="sm:min-w-[50%] min-w-full sm:min-h-screen min-h-[64vh] sm:px-24 px-8 py-8 pt-24 bg-white shadow-md flex flex-col justify-center items-center">
 			<!-- Logo ZenStays -->
 			<div class="flex justify-start mb-4">
 				<img src="/storage/assets/images/ThemeLogo.png" alt="Logo" class="w-1/6">

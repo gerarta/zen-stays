@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('payment_providers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('payment_type');
+            $table->enum('payment_type', ['Bank', 'E-Wallet']);
             $table->string('name');
         });
     }

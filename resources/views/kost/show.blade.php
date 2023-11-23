@@ -1,7 +1,8 @@
 <x-user title="{{ $kost->name }}">
+    <x-back-button></x-back-button>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
-    <section class="flex flex-row justify-center gap-16">
+    <section class="flex flex-row justify-center gap-16 py-8">
         <div class="flex flex-col w-5/12">
             <div class="mb-5 text-sm">
                 <span class="underline">{{ $kost->province }}</span>
@@ -12,24 +13,30 @@
             </div>
             <div class="flex flex-col mb-5">
                 <h2 class="text-xl">Virtual Tour</h2>
-                <div class="virtual-tour-entry flex w-full h-[40vh] kost-image">
-                    <div id="panorama" >
-                        
+                <div class="grid grid-cols-2">
+                    @for ($i = 0; $i < count($kost->picture); $i++)
+                    @if ($kost->picture[$i]->type == 'Panorama')
+                    <div class="virtual-tour-entry flex w-full h-[20vh] kost-image">
+                        <div class="cursor-pointer bg-black text-white flex flex-col gap-1 w-full justify-center place-items-center rounded-lg bg-opacity-50" onclick="{{ 'vtmodal'.$i }}.showModal()">
+                            <i class="fa-solid fa-vr-cardboard text-3xl"></i>
+                            <div class="font-bold text-lg">Virtual Tour</div>
+                            <div class="font-semibold text-xl">{{ $kost->picture[$i]->name }}</div>
+                            <div class="font-normal text-sm">Click Me!</div>
+                        </div>
                     </div>
-                    {{-- <div class="bg-black text-white flex flex-col gap-3 w-full justify-center place-items-center rounded-lg bg-opacity-50">
-                        <i class="fa-solid fa-vr-cardboard text-3xl"></i>
-                        <div class="font-bold text-xl">Virtual Tour</div>
-                        <div class="font-normal text-sm">Click Me!</div>
-                    </div> --}}
+                    @endif
+                    @endfor
                 </div>
             </div>
             <div class="flex flex-col">
-                <h2 class="text-xl">All Images</h2>
-                <img src="{{ $kost->picture[0]->link }}" alt="" class="kost-image h-[40vh] object-cover object-center">
-                <div class="flex flex-row">
-                    <img src="{{ $kost->picture[1]->link }}" alt="" class="kost-image w-1/3 h-[20vh] object-cover object-center">
-                    <img src="{{ $kost->picture[2]->link }}" alt="" class="kost-image w-1/3 h-[20vh] object-cover object-center">
-                    <img src="{{ $kost->picture[3]->link }}" alt="" class="kost-image w-1/3 h-[20vh] object-cover object-center">
+                <h2 class="text-xl">All Images <span class="text-sm">Click the image for larger view</span></h2>
+                <img src="{{ $kost->picture[0]->link }}" alt="" class=" cursor-pointer kost-image h-[40vh] object-cover object-center" onclick="mainimgmodal.showModal()">
+                <div class="grid grid-cols-3 gap-2">
+                    @for ($i = 1; $i < count($kost->picture); $i++)
+                        @if ($kost->picture[$i]->type == 'Normal')
+                        <img src="{{ $kost->picture[$i]->link }}" alt="" class="cursor-pointer kost-image w-full h-[20vh] object-cover object-center" onclick="{{ 'imgmodal'.$i }}.showModal()">
+                        @endif
+                    @endfor
                 </div>
             </div>
         </div>
@@ -149,31 +156,55 @@
             <div class="mb-4 flex w-full justify-end">
                 <div class="card flex w-fit flex-col">
                     <h3 class="font-normal text-3xl mb-2 text-right">{{ __('Rp. ') . number_format($kost->price,0,',','.') . __(' /month') }}</h3>
-                    <form class="flex flex-col items-end" action="{{ route('booking.check-out') }}" method="POST" enctype="multipart/form-data">
+                    <form class="flex flex-col items-end" action="{{ route('booking.confirmation') }}" method="POST" enctype="multipart/form-data">
                         @method('GET')
+                        @csrf
                         <input type="text" value="{{ $kost->id }}" name="kost_id" hidden>
                         <div class="flex gap-2 mb-2 w-full justify-end">
                             <div class="flex flex-col place-items-start">
                                 <label for="start_date" class="text-sm text-gray-600">{{ __('Start Date') }}</label>
                                 <input class="rounded-lg w-" id="start_date" type="date" name="start_date" placeholder="" min="{{ $current_date }}">
+                                @error('start_date')
+                                    <label for="" class="text-xs text-red-500">{{ $message }}</label>
+                                @enderror
                             </div>
                             <div class="flex flex-col place-items-start">
                                 <label for="end_date" class="text-sm text-gray-600">{{ __('End Date') }}</label>
-                                <input class="rounded-lg" id="end_date" type="date" name="end_date" placeholder="" min="{{ $current_date
-                                 }}">
+                                <input class="rounded-lg" id="end_date" type="date" name="end_date" placeholder="" min="{{ $current_date}}">
+                                @error('end_date')
+                                    <label for="" class="text-xs text-red-500">{{ $message }}</label>
+                                @enderror
                             </div>
                         </div>
                         <div class="w-full flex justify-end gap-2">
-                            @if (auth()->user())
-                                <form action="" method="POST" enctype="multipart/form-data">
-                                    @method('GET')
-                                    <input type="text" value="{{ $kost->id }}" name="kost_id" hidden>
-                                    <button type="submit" class="px-4 py-2.5 rounded-full w-1/2 text-white font-bold bg-red-400 hover:bg-red-600">Add to Wishlist</button>
-                                </form>
+                            <?php
+                                $full = false;
+                                if($kost->temp_quota > $kost->fixed_quota)
+                                    $full = true;
+                            ?>
+                            @if($full)
+                            <button type="button" disable class="w-96 font-bold btn-gray">Fully booked</button>
+                            @else
+                            <button type="submit" class="w-96 font-bold btn-blue">Book</button>
                             @endif
-                            <button type="submit" class="px-4 py-2.5 rounded-full w-96 text-white font-bold bg-blue-400 hover:bg-blue-600">Book</button>
                         </div>
                     </form>
+                    @if (auth()->user())
+                        <?php 
+                            $flag = false;
+                            $wishes = Auth::guard('web')->user()->wish;
+                            foreach($wishes as $wish){
+                                if($wish->kost_id == $kost->id)
+                                $flag = true;
+                        }
+                        ?>
+                        <form action="{{ route('kost.add-wishlist') }}" method="POST" enctype="multipart/form-data">
+                            @method('POST')
+                            @csrf
+                            <input type="text" value="{{ $kost->id }}" name="kost_id" hidden>
+                            <button type="submit" class="mt-2 w-96 btn-red font-semibold" {{ $flag ? 'hidden' : '' }}  >Add to Wishlist <i class="fa-solid fa-heart"></i></button>
+                        </form>
+                    @endif
                 </div>
             </div>
             {{-- Rules --}}
@@ -185,22 +216,54 @@
             </div>
         </div>
     </section>
+    {{-- Modals --}}
+    @for ($i = 1; $i < count($kost->picture); $i++)
+    @if ($kost->picture[$i]->type == 'Panorama')
+    <dialog id="{{ 'vtmodal'.$i }}" class="modal">
+        <div class="modal-box max-w-[50vw]">
+            <div id="{{ 'panorama'.$i }}" class="min-h-[40vh] min-w-[40vw]"></div>
+            {{-- <iframe src="https://renderstuff.com/tools/360-panorama-web-viewer-sharing/?image={{ env('APP_URL').$kost->picture[$i]->link }}" frameborder="0" class="min-h-[40vh] min-w-[40vw]"></iframe> --}}
+            <p class="py-4 text-sm text-center">Press ESC key or click outside to close</p>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </dialog>
+    @endif
+    @endfor
+    <dialog id="mainimgmodal" class="modal">
+        <div class="modal-box max-w-[50vw]">
+            <img class="object-cover object-center" src="{{ $kost->picture[0]->link }}"></img>
+            <p class="py-4 text-sm text-center">Press ESC key or click outside to close</p>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </dialog>
+    @for ($i = 1; $i < count($kost->picture) - 1; $i++)
+    @if ($kost->picture[$i]->type == 'Normal')
+    <dialog id="{{ 'imgmodal' . $i }}" class="modal">
+        <div class="modal-box max-w-[50vw]">
+            <img class="object-cover object-center" src="{{ $kost->picture[$i]->link }}"></img>
+            <p class="py-4 text-sm text-center">Press ESC key or click outside to close</p>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </dialog>
+    @endif
+    @endfor
+    @for ($i = 1; $i < count($kost->picture); $i++)
+    @if ($kost->picture[$i]->type == 'Panorama')
     <script defer>
-        const panorama = new PANOLENS.ImagePanorama( 'https://pannellum.org/images/alma.jpg' );
-        const imageViewer = document.querySelector('#panorama');
-        const viewer = new PANOLENS.Viewer({
-            container = imageViewer,
-            autoRotate = true,
-            autoRotateSpeed = 0.3,
-            controller = true,
+        pannellum.viewer('{{ 'panorama'.$i }}', {
+            "type": "equirectangular",
+            "panorama": '{{ env('APP_URL') . $kost->picture[$i]->link }}'
         });
-        viewer.add( panorama );
     </script>
+    @endif
+    @endfor
 </x-user>
 <style>
-.virtual-tour-entry{
-    /* background-image: url({{ $kost->picture[0]->link }}); */
-    background-size: cover;
-    background-position: center;
-}
+
 </style>
