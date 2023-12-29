@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,3 +57,9 @@ Route::controller(PaymentController::class)->prefix('payment')->name('payment.')
     Route::get('create/{bookingId}', 'create')->name('create')->middleware('auth');
     Route::post('store', 'store')->name('store')->middleware('auth');
 });
+
+Route::post('question',function(){
+    return redirect()->back()->with('success', 'Question has been successfully submited. Please wait 4-6 working days before we reach back to you');
+})->name('question');
+
+Route::post('review/store', [ReviewController::class, 'store'])->name("review.store")->middleware("auth");

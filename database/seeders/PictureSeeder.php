@@ -60,6 +60,24 @@ class PictureSeeder extends Seeder
             ],
             [
                 'kost_id' => 2,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/2.jpeg',
+                'type' => 'Normal',
+            ],
+            [
+                'kost_id' => 2,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/3.jpeg',
+                'type' => 'Normal',
+            ],
+            [
+                'kost_id' => 2,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/4.jpeg',
+                'type' => 'Normal',
+            ],
+            [
+                'kost_id' => 2,
                 'name' => 'Noon Environment',
                 'link' => '/storage/kost/1/PANO_1.jpg',
                 'type' => 'Panorama',
@@ -75,6 +93,24 @@ class PictureSeeder extends Seeder
                 'name' => 'Room',
                 'link' => 'https://images.unsplash.com/photo-1611048267707-aef79593a3ed?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9ybXx8fHx8fDE3MDA2NDYzNjY&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1000',
                 'type' => 'normal',
+            ],
+            [
+                'kost_id' => 3,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/2.jpeg',
+                'type' => 'Normal',
+            ],
+            [
+                'kost_id' => 3,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/3.jpeg',
+                'type' => 'Normal',
+            ],
+            [
+                'kost_id' => 3,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/4.jpeg',
+                'type' => 'Normal',
             ],
             [
                 'kost_id' => 3,
@@ -96,6 +132,24 @@ class PictureSeeder extends Seeder
             ],
             [
                 'kost_id' => 4,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/2.jpeg',
+                'type' => 'Normal',
+            ],
+            [
+                'kost_id' => 4,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/3.jpeg',
+                'type' => 'Normal',
+            ],
+            [
+                'kost_id' => 4,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/4.jpeg',
+                'type' => 'Normal',
+            ],
+            [
+                'kost_id' => 4,
                 'name' => 'Noon Environment',
                 'link' => '/storage/kost/1/PANO_1.jpg',
                 'type' => 'Panorama',
@@ -114,6 +168,24 @@ class PictureSeeder extends Seeder
             ],
             [
                 'kost_id' => 5,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/2.jpeg',
+                'type' => 'Normal',
+            ],
+            [
+                'kost_id' => 5,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/3.jpeg',
+                'type' => 'Normal',
+            ],
+            [
+                'kost_id' => 5,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/4.jpeg',
+                'type' => 'Normal',
+            ],
+            [
+                'kost_id' => 5,
                 'name' => 'Noon Environment',
                 'link' => '/storage/kost/1/PANO_1.jpg',
                 'type' => 'Panorama',
@@ -129,6 +201,24 @@ class PictureSeeder extends Seeder
                 'name' => 'Room',
                 'link' => 'https://images.unsplash.com/photo-1600948881750-962d07bb3619?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8ZG9ybXx8fHx8fDE3MDA2NDY0MjM&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1000',
                 'type' => 'normal',
+            ],
+            [
+                'kost_id' => 6,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/2.jpeg',
+                'type' => 'Normal',
+            ],
+            [
+                'kost_id' => 6,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/3.jpeg',
+                'type' => 'Normal',
+            ],
+            [
+                'kost_id' => 6,
+                'name' => 'Room',
+                'link' => '/storage/kost/1/4.jpeg',
+                'type' => 'Normal',
             ],
             [
                 'kost_id' => 6,

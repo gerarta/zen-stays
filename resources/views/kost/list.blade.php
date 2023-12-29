@@ -1,6 +1,6 @@
-<x-user title="Wishlists">
-    <h2 class="text-3xl mb-10 mt-5 text-center"> Kost List Near Kemanggisan<h2>
-            <div class="w-1/2 mx-auto mb-5 ">
+<x-guest title="Wishlists">
+    <h2 class="text-3xl mb-10 mt-28 text-center px-5"> Kost List Near Kemanggisan<h2>
+            <div class="w-1/2 mx-auto mb-5">
                 <form action="{{ route('kost.show-list') }}">
                     <div class="grid grid-cols-2 gap-2">
                         <div class="mb-4">
@@ -49,7 +49,7 @@
                 </form>
             </div>
             @if ($kosts->count())
-                <div class="w-full grid md:grid-cols-3 grid-cols-2 gap-4">
+                <div class="w-full grid md:grid-cols-3 grid-cols-1 gap-4 sm:px-20 px-4 pb-20">
                     @foreach ($kosts as $kost)
                         <a class="card  p-0 overflow-hidden rounded-xl relative" href="{{ route('kost.show', $kost->id) }}">
                             <div class="absolute top-3 left-3">

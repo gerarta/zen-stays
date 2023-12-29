@@ -43,6 +43,10 @@ class BookingController extends Controller
         if(!$kost)
             return redirect('/')->with('error', 'Kost not found');
 
+        $date1 = new DateTime($request->start_date);
+        $date2 = new DateTime($request->end_date);
+        $interval = $date1->diff($date2);
+
         $kost->update([
             'temp_quota' => $kost->temp_quota + 1,
         ]);

@@ -11,6 +11,10 @@
         @apply rounded-lg shadow-md border-2 px-4 py-4
     }
 
+    .btn {
+        @apply w-[25%] h-[25%] ;
+    }
+
     .btn-green{
         @apply bg-gradient-to-b from-greenLight from-20% to-greenDark py-2 px-3 text-gray-700 rounded-lg hover:scale-105 transition duration-500
     }

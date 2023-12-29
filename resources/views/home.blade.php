@@ -1,6 +1,6 @@
 <x-guest title="Home">
     <section id="landing-page" class="mx-auto mt-[5.2rem]">
-        <div class="w-full m-0 bg-[url('/images/landing-item.png')] md:h-[900px] sm:h-screen  bg-cover bg-center   ">
+        <div class="w-full m-0 bg-[url('/images/landing-item.png')] md:h-[1210px] sm:h-screen pt-14 bg-cover bg-center pe-16">
             <div class="flex justify-end">
                 <div class=" flex items-end   ">
                     <div class="w-1/2">
@@ -12,7 +12,6 @@
                     </h1>
                 </div>
             </div>
-
             <div class="text-end mt-4 me-2">
                 <blockquote class="text-white font-thin text-4xl italic sm:text-2xl">
                     "Where Every <span class="font-bold text-[#9ED2BE]">Stays</span> Fells like a Homecoming"
@@ -23,7 +22,7 @@
                 @method('GET')
                 <div class="flex rounded-full shadow-sm border  p-0.5">
                     <input type="text"
-                        class="py-2 px-3 pe-11 block w-[300px] border-gray-200 shadow-sm rounded-s-full text-sm focus:z-10 focus:outline-none focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none 
+                        class="py-2 px-3 pe-11 block sm:w-[300px] border-gray-200 shadow-sm rounded-s-full text-sm focus:z-10 focus:outline-none focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none 
                         tracking-wider"
                         placeholder="Enter Kost Name/Location"
                         name="name"
@@ -43,7 +42,7 @@
     </section>
 
     <section id="about-zen-stay">
-        <div class="  md:-mt-40  mx-auto p-4">
+        <div class="md:-mt-40  ps-12 p-4">
             <div class="grid md:grid-cols-2">
                 <div>
                     <h1 class="text-5xl font-bold mb-4">
@@ -69,8 +68,8 @@
     </section>
 
     <section id="why-zen-stay">
-        <div class=" mx-auto mt-6">
-            <div class="grid md:grid-cols-2">
+        <div class="sm:px-0 px-4 mt-6">
+            <div class="grid md:grid-cols-2 sm:pe-16 pe-0">
                 <div class="md:block hidden">
                     <img src="images/Vector.png" alt="">
                 </div>
@@ -80,7 +79,7 @@
                         <span class="text-[#FFD9B7]">Zen</span>
                         <span class="text-[#9ED2BE]">Stays</span>
                     </h1>
-                    <div class="grid gap-2 grid-cols-5 ">
+                    <div class="grid gap-2 sm:grid-cols-5 grid-cols-2">
                         <div>
                             <div class="rounded-full bg-gradient-to-b from-[#B6E2B3] to-[#A4D4BC] p-3">
                                 <img src="/images/cod.png" alt="" class="object-cover object-center">
@@ -121,9 +120,9 @@
     </section>
 
     <section id="benefit-zen-stay">
-        <div class=" mt-6">
-            <div class="grid md:grid-cols-2">
-                <div class="ms-4  tracking-wider">
+        <div class="mt-6">
+            <div class="flex justify-between">
+                <div class="sm:ms-16 tracking-wider px-4 sm:px-0">
                     <h1 class="text-5xl font-bold mb-4">
                         <span class="font-extrabold"> Benefit of Using</span>
                         <span class="text-[#FFD9B7]">Zen</span>
@@ -164,7 +163,6 @@
                     <p class="mt-4">
                         With ZenStays, finding and securing your ideal kost is not just easy but also enriched with
                         features designed to enhance your overall living experience.
-
                     </p>
                 </div>
                 <div class="-mt-48 md:block hidden">
@@ -174,28 +172,22 @@
         </div>
     </section>
 
-    <section id="send-us-message">
-        <div class="mt-5 mx-auto">
-            <div class="grid grid-cols-2 gap-4">
-                <form action="" class="translate-x-10">
+    <section id="send-us-message" class="mb-16">
+        <div class="mt-5 px-4">
+            <div class="flex md:flex-row flex-col-reverse gap-4">
+                <form action="{{ route('question') }}" method="POST" class="sm:translate-x-10">
+                    @csrf
+                    @method('POST')
                     <div class="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="First Name"
-                            class=" p-1 outline outline-2 
-                        outline-black placeholder:tracking-widest">
-                        <input type="text" placeholder="Last Name"
-                            class=" p-1 outline outline-2 
-                        outline-black placeholder:tracking-widest">
+                        <input type="text" placeholder="Name" class="p-1 px-4 rounded-full" required>
+                        <input type="text" placeholder="Email" class="p-1 px-4 rounded-full" required>
                     </div>
-                    <input type="text" placeholder="Subject"
-                        class=" p-1 outline outline-2 
-                        outline-black placeholder:tracking-widest mt-4 w-full">
-
-                    <textarea name="" id="" cols="30" rows="10"
-                        class=" p-1 outline outline-2 
-                    outline-black placeholder:tracking-widest mt-4 w-full text-slate-500"> Message</textarea>
+                    <input type="text" placeholder="Subject" class="p-1 px-4 rounded-full mt-4 w-full" required>
+                    <textarea name="" id="" cols="30" rows="10" class="p-1 px-4 rounded-md mt-4 w-full text-slate-500" placeholder="Message" required></textarea>
+                    <button class="btn-green w-full mt-2">Submit</button>
                 </form>
 
-                <div class="md:text-end text-start -translate-x-10">
+                <div class="md:text-end text-start sm:-translate-x-20">
                     <h2 class="text-4xl font-extrabold mb-4"> Send Us A Message</h2>
                     <div class=" w-full md:w-3/4 float-right">
                         <p class="font-medium text-xl mb-5">
@@ -204,9 +196,7 @@
                         <small>
                             We need your <span class="font-bold">Name</span> and
                             <span class="font-bold">
-                                Email Address
-                            </span>, but you won't receive anything other than your reply.
-
+                                Email Address</span>, but you won't receive anything other than your reply.
                         </small>
                     </div>
                 </div>

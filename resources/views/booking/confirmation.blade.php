@@ -1,16 +1,16 @@
 <x-user title="Check Out">
     <x-back-button></x-back-button>
     <h2 class="text-3xl font-normal mt-5">Booking Confirmation</h2>
-    <section class="flex flex-row justify-center mt-8 gap-4">
-        <div class="flex w-5/12 flex-col">
+    <section class="flex sm:flex-row flex-col justify-center mt-8 gap-4">
+        <div class="flex sm:w-5/12 flex-col">
             <img src="{{ $kost->picture[0]->link }}" alt="" class="h-[40vh] object-cover object-center rounded-md shadow-lg mb-5">
             <h3 class="text-2xl font-normal">{{ $kost->name }}</h3>
             <h4 class="text-base font-normal">{{ $kost->address }}</h4>
         </div>
-        <form class="flex w-7/12 flex-col" method="POST" action="{{ route('booking.store') }}" enctype="multipart/form-data">
+        <form class="flex sm:w-7/12 flex-col" method="POST" action="{{ route('booking.store') }}" enctype="multipart/form-data">
             @csrf
             @method('POST')
-            <div class="card flex flex-col px-20 py-10 bg-gradient-to-r from-white to-slate-50 gap-10">
+            <div class="card flex flex-col sm:px-20 px-10 py-10 bg-gradient-to-r from-white to-slate-50 gap-10">
                 <div class="flex flex-col gap-2">
                     <h4 class="text-2xl font-normal mb-3">Booking Details:</h4>
                     {{-- Customer Name --}}
@@ -115,7 +115,7 @@
                 <div class="flex justify-center place-items-center flex-col gap-5">
                     <input type="text" value="{{ $kost->id }}" name="kost_id" hidden>
                     <button type="submit" class="w-1/2 btn-green text-lg">Confirm <i class="ms-2 fa-solid fa-arrow-right"></i></button>
-                    <button type="button" class="w-1/2 btn-orange text-lg">Print Receipt <i class="ms-2 fa-solid fa-receipt"></i></button>
+                    <button type="button" class="w-fit btn-orange text-lg">Print Receipt <i class="ms-2 fa-solid fa-receipt"></i></button>
                     <div class="w-full text-red-400 text-base">*By clicking 'Check Out' I've read and agreed to the Terms and Conditions</div>
                 </div>
             </div>
