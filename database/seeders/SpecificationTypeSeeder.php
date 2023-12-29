@@ -97,5 +97,22 @@ class SpecificationTypeSeeder extends Seeder
             'icon' => 'https://img.icons8.com/pastel-glyph/64/person-male--v1.png',
             'name' => 'Person from University',
         ]);
+
+        // Near This Kost
+        DB::table('specification_types')->insert([
+            'type' => 'Near This Kost',
+            'icon' => 'https://img.icons8.com/pastel-glyph/64/hospital--v3.png',
+            'name' => 'Hospital',
+        ]);
+        DB::table('specification_types')->insert([
+            'type' => 'Near This Kost',
+            'icon' => 'https://img.icons8.com/ios/50/police-badge.png',
+            'name' => 'Police Station',
+        ]);
+        DB::table('specification_types')->insert([
+            'type' => 'Near This Kost',
+            'icon' => 'https://img.icons8.com/ios/50/restaurant.png',
+            'name' => 'Restaurant',
+        ]);
     }
 }

@@ -10,11 +10,13 @@
 	<!-- Fonts -->
 
 	@vite(['resources/js/app.js'])
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="font-sans text-gray-900 antialiased">
 		<x-navbar-guest></x-navbar-guest>
 		@yield('content')
 	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 </body>
 </html>

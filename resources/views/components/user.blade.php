@@ -1,6 +1,6 @@
 <x-layout title="{{$title}}">
     <x-user-navbar></x-user-navbar>
-    <main class="px-36 sm:py-28">
+    <main class="sm:px-36 py-28 px-8">
         {{$slot}}
     </main>
     <x-footer></x-footer>

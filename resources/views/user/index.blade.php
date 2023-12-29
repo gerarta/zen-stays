@@ -9,7 +9,7 @@
     <section>
         <h2 class="text-2xl mb-3">Booking history</h2>
         @if ($bookings->count())
-                <div class="w-full grid md:grid-cols-3 grid-cols-2 gap-4">
+                <div class="w-full grid md:grid-cols-3 grid-cols-1 gap-4">
                     @foreach ($bookings as $booking)
                         <div class="card  p-0 overflow-hidden rounded-xl relative" href="{{ route('kost.show', $booking->kost->id) }}">
                             <div class="absolute top-3 left-3">
@@ -42,6 +42,8 @@
                                         $date1 = new DateTime($booking->start_date);
                                         $date2 = new DateTime($booking->end_date);
                                         $interval = $date1->diff($date2);
+                                        if((int) $interval->m == 0)
+                                            $interval->m = $interval->m + 1;
                                     ?>
                                     <div>Payment Progress</div>
                                     <div>{{ $booking->temp_amount / $booking->kost->price . '/' . $interval->m }}</div>
