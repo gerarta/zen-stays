@@ -1,4 +1,4 @@
-<x-user title="Check Out">
+<x-user title="Booking Confirmation">
     <x-back-button></x-back-button>
     <h2 class="text-3xl font-normal mt-5">Booking Confirmation</h2>
     <section class="flex sm:flex-row flex-col justify-center mt-8 gap-4">
@@ -65,21 +65,21 @@
                             <i class="fa-solid fa-arrows-spin text-sm"></i>
                             <label for="" class="ms-2">{{ __('Payment Interval') }}</label>
                         </div>
-                        <div class="flex rounded-lg border-[3px] w-1/2 justify-center">{{ __('Once a Month') }}</div>
+                        <div class="flex rounded-lg border-[3px] w-1/2 justify-center items-center">{{ __('Once a Month') }}</div>
                     </div>
                     <div class="flex justify-between">
                         <div class="flex w-1/3 place-items-center">
                             <i class="fa-solid fa-arrows-spin text-sm"></i>
                             <label for="" class="ms-2">{{ __('Account Number') }}</label>
                         </div>
-                        <div class="flex rounded-lg border-[3px] w-1/2 justify-center">{{ $kost->seller->account_number }}</div>
+                        <div class="flex rounded-lg border-[3px] w-1/2 justify-center items-center">{{ $kost->seller->account_number }}</div>
                     </div>
                     <div class="flex justify-between">
                         <div class="flex w-1/3 place-items-center">
                             <i class="fa-solid fa-arrows-spin text-sm"></i>
                             <label for="" class="ms-2">{{ __('Account Type') }}</label>
                         </div>
-                        <div class="flex rounded-lg border-[3px] w-1/2 justify-center">{{ $kost->seller->account_type }}</div>
+                        <div class="flex rounded-lg border-[3px] w-1/2 justify-center items-center">{{ $kost->seller->account_type }}</div>
                     </div>
                 </div>
                 <div class="flex flex-col gap-2">
@@ -114,8 +114,8 @@
                 </div>
                 <div class="flex justify-center place-items-center flex-col gap-5">
                     <input type="text" value="{{ $kost->id }}" name="kost_id" hidden>
-                    <button type="submit" class="w-1/2 btn-green text-lg">Confirm <i class="ms-2 fa-solid fa-arrow-right"></i></button>
-                    <button type="button" class="w-1/3 btn-orange text-lg">Print Receipt <i class="ms-2 fa-solid fa-receipt"></i></button>
+                    <button type="submit" class="sm:w-1/2 w-full btn-green text-lg">Confirm <i class="ms-2 fa-solid fa-arrow-right"></i></button>
+                    <button type="button" class="sm:w-1/3 w-full btn-orange text-lg">Print Receipt <i class="ms-2 fa-solid fa-receipt"></i></button>
                     <div class="w-full text-red-400 text-base">*By clicking 'Check Out' I've read and agreed to the Terms and Conditions</div>
                 </div>
             </div>

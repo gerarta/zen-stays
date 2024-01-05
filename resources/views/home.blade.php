@@ -1,20 +1,20 @@
 <x-guest title="Home">
     <section id="landing-page" class="mx-auto mt-[5.2rem]">
-        <div class="w-full m-0 bg-[url('/images/landing-item.png')] md:h-[1210px] sm:h-screen pt-14 bg-cover bg-center pe-16">
+        <div class="w-full m-0 bg-[url('/images/landing-item.png')] md:h-[1210px] sm:h-screen h-[420px] max-w-[100vw] pt-14 bg-cover bg-center sm:pe-16 pe-4">
             <div class="flex justify-end">
                 <div class=" flex items-end   ">
                     <div class="w-1/2">
                         <img src="/images/logo.png" class="w-full " alt="">
                     </div>
                     <h1 class="md:text-8xl text-5xl font-bold align-bottom">
-                        <span class="text-[#FFD9B7]">Zen</span>
+                        <span class="text-orangeLight">Zen</span>
                         <span class="text-[#9ED2BE]">Stays</span>
                     </h1>
                 </div>
             </div>
             <div class="text-end mt-4 me-2">
-                <blockquote class="text-white font-thin text-4xl italic sm:text-2xl">
-                    "Where Every <span class="font-bold text-[#9ED2BE]">Stays</span> Fells like a Homecoming"
+                <blockquote class="text-white text-xl italic sm:text-2xl">
+                    "Where Every <span class="font-bold text-[#9ED2BE]">Stays</span> Fells like a <span class="text-[#9ED2BE] font-bold">Homecoming</span>"
                 </blockquote>
             </div>
             <form class="flex justify-end w-auto me-2 mt-4" action="{{ route('kost.show-list') }}" method="POST">
@@ -42,12 +42,12 @@
     </section>
 
     <section id="about-zen-stay">
-        <div class="md:-mt-40  ps-12 p-4">
+        <div class="md:-mt-40 mt-10 sm:ps-12 p-4 bg-orangeLight bg-opacity-10 py-14">
             <div class="grid md:grid-cols-2">
                 <div>
                     <h1 class="text-5xl font-bold mb-4">
                         <span class="font-extrabold"> About</span>
-                        <span class="text-[#FFD9B7]">Zen</span>
+                        <span class="text-orangeLight">Zen</span>
                         <span class="text-[#9ED2BE]">Stays</span>
                     </h1>
                     <p class="tracking-wider ">
@@ -68,48 +68,47 @@
     </section>
 
     <section id="why-zen-stay">
-        <div class="sm:px-0 px-4 mt-6">
+        <div class="sm:px-0 px-4 mt-10">
             <div class="grid md:grid-cols-2 sm:pe-16 pe-0">
                 <div class="md:block hidden">
                     <img src="images/Vector.png" alt="">
                 </div>
-                <div class=" text-center">
+                <div class="text-center">
                     <h1 class="text-5xl font-bold mb-4">
-                        <span class="font-extrabold"> Why</span>
-                        <span class="text-[#FFD9B7]">Zen</span>
+                        <span class="font-extrabold">Why</span>
+                        <span class="text-orangeLight">Zen</span>
                         <span class="text-[#9ED2BE]">Stays</span>
                     </h1>
-                    <div class="grid gap-2 sm:grid-cols-5 grid-cols-2">
-                        <div>
-                            <div class="rounded-full bg-gradient-to-b from-[#B6E2B3] to-[#A4D4BC] p-3">
-                                <img src="/images/cod.png" alt="" class="object-cover object-center">
+                    <div class="grid gap-2 sm:grid-cols-5 grid-cols-2  place-items-center mt-3">
+                        <div class="flex flex-col justify-center items-center gap-1">
+                            <div class="rounded-full bg-gradient-to-b from-[#B6E2B3] to-[#A4D4BC] p-5 flex justify-center items-center w-fit">
+                                <img src="/images/cod.png" alt="" class="max-h-24 h-24">
                             </div>
                             <p class="text-light tracking-wider"> Safe Payment</p>
                         </div>
-                        <div>
-                            <div class="rounded-full bg-gradient-to-b from-[#B6E2B3] to-[#A4D4BC] p-3">
+                        <div class="flex flex-col justify-center items-center gap-1">
+                            <div class="rounded-full bg-gradient-to-b from-[#B6E2B3] to-[#A4D4BC] p-5 flex justify-center items-center w-fit">
                                 <img src="/images/investment-time.png" alt=""
-                                    class="object-cover object-center">
+                                    class="max-h-24 h-24">
                             </div>
-                            <p class="text-light tracking-wider"> Time Efficiency</p>
+                            <p class="text-light tracking-wider">Time Efficiency</p>
                         </div>
-                        <div>
-                            <div class="rounded-full bg-gradient-to-b from-[#B6E2B3] to-[#A4D4BC] p-3">
+                        <div class="flex flex-col justify-center items-center gap-1">
+                            <div class="rounded-full bg-gradient-to-b from-[#B6E2B3] to-[#A4D4BC] p-5 flex justify-center items-center w-fit">
                                 <img src="/images/Information-Location.png" alt=""
-                                    class="object-cover 
-                                block mx-auto object-center">
+                                    class="max-h-24 h-24">
                             </div>
                             <p class="text-light tracking-wider"> Comprehensive Information </p>
                         </div>
-                        <div>
-                            <div class="rounded-full bg-gradient-to-b from-[#B6E2B3] to-[#A4D4BC] p-3">
-                                <img src="/images/settings.png" alt="" class="object-cover object-center">
+                        <div class="flex flex-col justify-center items-center gap-1">
+                            <div class="rounded-full bg-gradient-to-b from-[#B6E2B3] to-[#A4D4BC] p-5 flex justify-center items-center w-fit">
+                                <img src="/images/settings.png" alt="" class="max-h-24 h-24">
                             </div>
                             <p class="text-light tracking-wider"> Personal Search</p>
                         </div>
-                        <div>
-                            <div class="rounded-full bg-gradient-to-b from-[#B6E2B3] to-[#A4D4BC] p-3">
-                                <img src="/images/360-view.png" alt="" class="object-cover object-center">
+                        <div class="flex flex-col justify-center items-center gap-1">
+                            <div class="rounded-full bg-gradient-to-b from-[#B6E2B3] to-[#A4D4BC] p-5 flex justify-center items-center w-fit">
+                                <img src="/images/360-view.png" alt="" class="max-h-24 h-24">
                             </div>
                             <p class="text-light tracking-wider"> 360 <sup>o</sup> Virtual View</p>
                         </div>
@@ -120,12 +119,12 @@
     </section>
 
     <section id="benefit-zen-stay">
-        <div class="mt-6">
+        <div class="sm:mt-6 mt-10 bg-greenLight bg-opacity-20 py-14">
             <div class="flex justify-between">
                 <div class="sm:ms-16 tracking-wider px-4 sm:px-0">
                     <h1 class="text-5xl font-bold mb-4">
                         <span class="font-extrabold"> Benefit of Using</span>
-                        <span class="text-[#FFD9B7]">Zen</span>
+                        <span class="text-orangeLight">Zen</span>
                         <span class="text-[#9ED2BE]">Stays</span>
                     </h1>
                     <ol class="indent-1 list-decimal ms-8">
@@ -173,7 +172,7 @@
     </section>
 
     <section id="send-us-message" class="mb-16">
-        <div class="mt-5 px-4">
+        <div class="mt-10 px-4">
             <div class="flex md:flex-row flex-col-reverse gap-4">
                 <form action="{{ route('question') }}" method="POST" class="sm:translate-x-10">
                     @csrf
@@ -187,7 +186,7 @@
                     <button class="btn-green w-full mt-2">Submit</button>
                 </form>
 
-                <div class="md:text-end text-start sm:-translate-x-20">
+                <div class="md:text-end text-start sm:-translate-x-10">
                     <h2 class="text-4xl font-extrabold mb-4"> Send Us A Message</h2>
                     <div class=" w-full md:w-3/4 float-right">
                         <p class="font-medium text-xl mb-5">
