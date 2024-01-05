@@ -1,4 +1,4 @@
-<x-guest title="Wishlists">
+<x-guest title="Kost Lists">
     <h2 class="text-3xl mb-10 mt-28 text-center px-5"> Kost List Near Kemanggisan<h2>
             <div class="w-1/2 mx-auto mb-5">
                 <form action="{{ route('kost.show-list') }}">
