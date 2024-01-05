@@ -1,6 +1,4 @@
-@extends('layouts.auth')
-@section('title', 'Forgot Password')
-@section('content')
+<x-guest title="Forgot Password">
 	<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
 		<div>
 			<a href="/">
@@ -55,4 +53,4 @@
 			</form>
 		</div>
 	</div>
-@endsection
+</x-guest>
