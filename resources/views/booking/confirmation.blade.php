@@ -115,7 +115,7 @@
                 <div class="flex justify-center place-items-center flex-col gap-5">
                     <input type="text" value="{{ $kost->id }}" name="kost_id" hidden>
                     <button type="submit" class="w-1/2 btn-green text-lg">Confirm <i class="ms-2 fa-solid fa-arrow-right"></i></button>
-                    <button type="button" class="w-fit btn-orange text-lg">Print Receipt <i class="ms-2 fa-solid fa-receipt"></i></button>
+                    <button type="button" class="w-1/3 btn-orange text-lg">Print Receipt <i class="ms-2 fa-solid fa-receipt"></i></button>
                     <div class="w-full text-red-400 text-base">*By clicking 'Check Out' I've read and agreed to the Terms and Conditions</div>
                 </div>
             </div>

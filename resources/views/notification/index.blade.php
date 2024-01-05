@@ -1,5 +1,6 @@
 <x-user title="Notifications">
-    <div class="flex justify-center place-items-center min-h-screen">
-        <h1 class="text-3xl">No notifications found...</h1>
+    <x-back-button></x-back-button>
+    <div class="min-h-screen mt-5">
+        <div class="text-3xl font-semibold mb-6">No notifications yet...</div>
     </div>
 </x-user>

@@ -28,6 +28,8 @@ class BookingController extends Controller
         $yearsInMonths = $diff->format('%r%y') * 12;
         $months = $diff->format('%r%m');
         $total_months = $yearsInMonths + $months;
+
+        $total_months = $total_months < 1 ? 1 : $total_months;
             
         return view('booking.confirmation', [
             'kost' => $kost,
