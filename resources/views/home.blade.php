@@ -42,7 +42,7 @@
     </section>
 
     <section id="about-zen-stay">
-        <div class="md:-mt-40 mt-10 sm:ps-12 p-4 bg-orangeLight bg-opacity-10 py-14">
+        <div class="md:-mt-40 mt-10 sm:ps-12 p-4 bg-orangeLight bg-opacity-[0.15] py-14">
             <div class="grid md:grid-cols-2">
                 <div>
                     <h1 class="text-5xl font-bold mb-4">
